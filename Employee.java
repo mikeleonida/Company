@@ -20,6 +20,10 @@ public class Employee {
 		
 	}
 	
+	public Employee(String name, String department, double hourlyPayRate) {
+		this(name, department, hourlyPayRate, 0.0, 0);
+	}
+	
 	public Employee(String name, String department, double hourlyPayRate, double workHours, int unitsSoldOrProduced) {
 		super();
 		this.name = name;
@@ -32,10 +36,6 @@ public class Employee {
 		} else {
 			this.employeeId = PRODUCTION_DEPT_CODE + "_" + (lastIdNumber++);
 		}
-	}
-	
-	public Employee(String name, String department, double hourlyPayRate) {
-		this(name, department, hourlyPayRate, 0.0, 0);
 	}
 
 	public String getName() {
