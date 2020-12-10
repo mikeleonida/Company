@@ -1,13 +1,34 @@
 package company;
 
 public class Company {
+	private String name;
 	private SalesDept sales;
 	private ProductionDept production;
 	
+	public Company() {
+		super();
+	}
+
 	public Company(SalesDept sales, ProductionDept production) {
 		super();
+		this.name = "";
 		this.sales = sales;
 		this.production = production;
+	}
+
+	public Company(String name, SalesDept sales, ProductionDept production) {
+		super();
+		this.name = name;
+		this.sales = sales;
+		this.production = production;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public SalesDept getSales() {
@@ -28,7 +49,7 @@ public class Company {
 
 	@Override
 	public String toString() {
-		return "Company [sales=" + sales + ", \nproduction=" + production + "]";
+		return "Company " + name + "\nSales " + sales + ", \nProduction " + production + "]";
 	}
 	
 	

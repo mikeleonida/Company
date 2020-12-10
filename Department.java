@@ -43,7 +43,7 @@ public abstract class Department {
 
 	@Override
 	public String toString() {
-		return "Department [employees=" + Arrays.toString(employees) + "]";
+		return "Department employees " + Arrays.toString(employees);
 	}
 	
 	

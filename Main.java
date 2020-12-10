@@ -9,9 +9,9 @@ public class Main {
 		manny.setWorkHours(45);
 		Employee harish = new Employee("Harish", "Sales", 50.00);
 		harish.setWorkHours(25);
-		Employee sean = new Employee("Sean D", "Sales", 35.00);
+		Employee sean = new Employee("Sean D", "Sales", 35.00, 45.00, 55);
 		sean.setWorkHours(20);
-		sean.addToWorkHours(20);
+		sean.addToWorkHours(35);
 		
 		Employee[] salesEmps = new Employee[2];
 		Employee[] productionEmps = new Employee[2];
@@ -25,7 +25,7 @@ public class Main {
 		SalesDept sd = new SalesDept(salesEmps);
 		ProductionDept pd = new ProductionDept(productionEmps);
 		
-		Company co = new Company(sd, pd);
+		Company co = new Company("Sales & Production Unlimited, Inc.", sd, pd);
 		System.out.println(co);
 		
 		System.out.println("**********************************");
@@ -35,12 +35,12 @@ public class Main {
 		harish.setUnitsSoldOrProduced(250);
 		
 		for (Employee e : co.getSales().getEmployees()) {
-			System.out.println(e.getName() + " is eligible for comission or bonus : " 
-					+ co.getSales().isIncentiveEligible(e));
+			System.out.println(e.getName() + " is eligible for " + co.getSales().DEPARTMENT_INCENTIVE 
+					+ " : " + co.getSales().isIncentiveEligible(e));
 		}
 		for (Employee e : co.getProduction().getEmployees()) {
-			System.out.println(e.getName() + " is eligible for comission or bonus : " 
-					+ co.getProduction().isIncentiveEligible(e));
+			System.out.println(e.getName() + " is eligible for " + co.getProduction().DEPARTMENT_INCENTIVE 
+					+ " : " + co.getProduction().isIncentiveEligible(e));
 		}
 		
 		System.out.println("**********************************");

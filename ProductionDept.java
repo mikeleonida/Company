@@ -1,7 +1,8 @@
 package company;
 
 public class ProductionDept extends Department implements PaidOvertime {
-	public static final int UNITS_PRODUCED_TARGET = 40;
+	public final int UNITS_PRODUCED_TARGET = 40;
+	public final String DEPARTMENT_INCENTIVE = "bonus";
 	
 	public ProductionDept() {
 		super();
@@ -41,7 +42,7 @@ public class ProductionDept extends Department implements PaidOvertime {
 		}
 		
 		return (OVERTIME_HOURS_THRESHOLD * e.getHourlyPayRate() + 
-				(e.getWorkHours() - OVERTIME_HOURS_THRESHOLD) * OVERTIME_RATE * e.getHourlyPayRate());
+				((e.getWorkHours() - OVERTIME_HOURS_THRESHOLD) * OVERTIME_RATE * e.getHourlyPayRate()));
 	}
 	
 	

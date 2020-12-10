@@ -3,9 +3,8 @@ package company;
 public class Employee {
 	private String employeeId;
 	private String name;
-	private double workHours;
 	private double hourlyPayRate;
-	
+	private double workHours;
 	private int unitsSoldOrProduced;
 	
 	private static int lastIdNumber;
@@ -21,18 +20,22 @@ public class Employee {
 		
 	}
 	
-	public Employee(String name, String department, double hourlyPayRate) {
+	public Employee(String name, String department, double hourlyPayRate, double workHours, int unitsSoldOrProduced) {
 		super();
 		this.name = name;
 		this.hourlyPayRate = hourlyPayRate;
-		this.workHours = 0;
-		this.unitsSoldOrProduced = 0;
+		this.workHours = workHours;
+		this.unitsSoldOrProduced = unitsSoldOrProduced;
 		
 		if (department.compareToIgnoreCase("sales") == 0) {
 			this.employeeId = SALES_DEPT_CODE + "_" + (lastIdNumber++);
 		} else {
 			this.employeeId = PRODUCTION_DEPT_CODE + "_" + (lastIdNumber++);
 		}
+	}
+	
+	public Employee(String name, String department, double hourlyPayRate) {
+		this(name, department, hourlyPayRate, 0.0, 0);
 	}
 
 	public String getName() {

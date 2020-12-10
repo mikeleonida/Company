@@ -1,7 +1,8 @@
 package company;
 
 public class SalesDept extends Department {
-	public static final int UNITS_SOLD_TARGET = 50;
+	public final int UNITS_SOLD_TARGET = 50;
+	public final String DEPARTMENT_INCENTIVE = "comission";
 		
 	public SalesDept() {
 		super();
