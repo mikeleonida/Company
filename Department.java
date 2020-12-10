@@ -24,7 +24,7 @@ public abstract class Department {
 	
 	public boolean findEmployee(Employee e) {
 		for (Employee deptEmp : employees) {
-			if (deptEmp.getEmployeeId() == e.getEmployeeId()) {
+			if (deptEmp.getEmployeeId().compareToIgnoreCase(e.getEmployeeId()) == 0) {
 				return true;
 			}
 		}
